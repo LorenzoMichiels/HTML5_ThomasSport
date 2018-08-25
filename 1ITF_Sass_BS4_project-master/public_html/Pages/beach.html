@@ -19,7 +19,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarMenu">
             <ul class="navbar-nav">
-                <li class="nav-item"><a href="/ThomasSport/Pages/beach.html" class="nav-link">Beachvolleyball</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Beachvolleyball</a></li>
                 <li class="nav-item"><a href="/ThomasSport/Pages/calesthenics.html" class="nav-link">Calesthenics</a></li>
                 <li class="nav-item"><a href="/ThomasSport/Pages/petanque.html" class="nav-link">Petanque</a></li>
             </ul>
@@ -37,12 +37,23 @@
         <p>Het belangrijkste verschil met zaalvolleybal is dat een team maar 2 spelers kent. Er wordt soms ook in teams van 3 of 4 spelers gespeeld, vooral op lager niveau is dit een veel gespeelde vorm.
         </p>
         <div class="row justify-content-around">
+            <div class="form-group col-md-4">
+                <label for="selectRules" class="font-weight-bold">Selecteer de gewenste regels</label>
+                <select id="selectRules" class="form-control">
+        <option value="noRules" selected>Kies...</option>
+        <option value="afwijkendeRegels">Afwijkende regels</option>
+        <option value="technischeRegels">Technische regels</option>
+        <option value="standaardRegels">Standaard regels</option>
+      </select>
+            </div>
+        </div>
+        <div class="row justify-content-around">
             <div class="col-12 col-md-8 col-lg-4 ">
                 <img src="../Images/Beachvolleynet.jpg" class="img-fluid" alt="Beachvolleybal terrein">
             </div>
-            <div class="col-12 col-lg-8">
-                <p>Belangrijke afwijkende spelregels ten opzichte van zaalvolleybal zijn:
-                </p>
+            <div class="col-12 col-lg-8 regels" id="afwijkendeRegels">
+                <h3>Belangrijke afwijkende spelregels ten opzichte van zaalvolleybal zijn:
+                </h3>
                 <ul>
                     <li>Er zijn geen vaste posities voor spelers in het veld</li>
                     <li>De bal is zwaarder en zachter.</li>
@@ -52,23 +63,25 @@
                 </ul>
             </div>
         </div>
-        <p>Technische regels:
-        </p>
-        <ul>
-            <li>Bij het bovenhands spelen van de bal hoeft er geen kort contact te zijn, wel moet de bal loodrecht op de schouderlijn worden gespeeld en mag dus niet zijdelings worden weggespeeld.</li>
-            <li>Na het bovenhands spelen mag de bal geen draaiende beweging vertonen, dat wil zeggen niet meer dan één volledige omwenteling maken.</li>
-            <li>Als een bal naar de overzijde wordt gespeeld mag er geen zacht/lang contact zijn. Dit wordt ook wel hard contact genoemd. Vormen hiervan zijn een (harde) aanval, onderhandse techniek of knokkel. Eigenlijk alle varianten waar niet met de vingers sturing aan de bal kan worden gegeven.</li>
-            <li>Voor een bal die opgevangen wordt vanaf de overzijde geldt vrijwel hetzelfde; hard contact of een perfecte bovenhandse techniek (richting van de bal loodrecht vanaf de schouderlijn.)</li>
-        </ul>
+        <div class="row regels" id="technischeRegels">
+            <h3>Technische regels:
+            </h3>
+            <ul>
+                <li>Bij het bovenhands spelen van de bal hoeft er geen kort contact te zijn, wel moet de bal loodrecht op de schouderlijn worden gespeeld en mag dus niet zijdelings worden weggespeeld.</li>
+                <li>Na het bovenhands spelen mag de bal geen draaiende beweging vertonen, dat wil zeggen niet meer dan één volledige omwenteling maken.</li>
+                <li>Als een bal naar de overzijde wordt gespeeld mag er geen zacht/lang contact zijn. Dit wordt ook wel hard contact genoemd. Vormen hiervan zijn een (harde) aanval, onderhandse techniek of knokkel. Eigenlijk alle varianten waar niet met de vingers sturing aan de bal kan worden gegeven.</li>
+                <li>Voor een bal die opgevangen wordt vanaf de overzijde geldt vrijwel hetzelfde; hard contact of een perfecte bovenhandse techniek (richting van de bal loodrecht vanaf de schouderlijn.)</li>
+            </ul>
+        </div>
         <p>Op lager niveau worden meer de technische regels van het zaalvolleybal gevolgd.
         </p>
         <div class="row justify-content-around">
             <div class="col-12 col-md-8 col-lg-4 ">
                 <img src="../Images/Beachvolleynet2.jpg" class="img-fluid" alt="Beachvolleybal terrein">
             </div>
-            <div class="col-12 col-lg-8">
-                <p>Regels:
-                </p>
+            <div class="col-12 col-lg-8 regels" id="standaardRegels">
+                <h3>Regels:
+                </h3>
                 <ul>
                     <li>Een blok geldt als een contact, hierna mag de bal nog maar 2 keer worden aangeraakt alvorens over het net gespeeld te worden.</li>
                     <li>De bal mag na een blok door de blokkeerder nogmaals worden gespeeld. Dit wordt geteld als 2 contacten.</li>
@@ -89,4 +102,14 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function() {
+            $('#selectRules').change(function() {
+                //alert('.'+$(this).val());
+                $('.regels').removeClass('border-select');
+                $('#'+$(this).val()).addClass('border-select');
+            });
+        });
+
+    </script>
 </body>
