@@ -8,3 +8,6 @@ $theme-colors: (
 @import "../node_modules/bootstrap/scss/bootstrap";
 
 // Custom code/partials
+.navbar-brand{
+    max-height: 150px;
+}
